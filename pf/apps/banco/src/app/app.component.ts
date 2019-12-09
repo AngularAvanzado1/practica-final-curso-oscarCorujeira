@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Test } from '@pf/shared/dominio';
 
 @Component({
   selector: 'pf-banco-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'banco';
+
+  test: Test = { test: 'Test1'}
 }

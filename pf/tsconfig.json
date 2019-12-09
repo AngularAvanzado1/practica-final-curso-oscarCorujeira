@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pf/shared/dominio": ["libs/shared/dominio/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

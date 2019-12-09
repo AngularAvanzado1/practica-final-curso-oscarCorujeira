@@ -120,6 +120,31 @@
           }
         }
       }
+    },
+    "shared-dominio": {
+      "root": "libs/shared/dominio",
+      "sourceRoot": "libs/shared/dominio/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/dominio/tsconfig.lib.json",
+              "libs/shared/dominio/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/dominio/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/dominio/jest.config.js",
+            "tsConfig": "libs/shared/dominio/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

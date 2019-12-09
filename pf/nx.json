@@ -13,6 +13,9 @@
     },
     "banco": {
       "tags": []
+    },
+    "shared-dominio": {
+      "tags": []
     }
   }
 }
