@@ -1,0 +1,8 @@
+<div *ngIf="regiones">
+  <ul>
+    <li *ngFor="let region of regiones">
+      Id: {{region.id}} - Code: {{region.code}} - Nombre: {{region.name}}
+      <button (click)="this.goRegion(region.code)">Ir zona continental</button>
+    </li>
+  </ul>
+</div>
