@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 import { BancoService } from '../banco.service';
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       );
   }
 
-  goContinente(code) {
+  goContinente(code: string) {
     this.router.navigate(['/region', code]);
   }
 
