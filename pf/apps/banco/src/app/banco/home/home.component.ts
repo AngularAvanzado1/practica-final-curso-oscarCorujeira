@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.regiones$ = this.bancoService.getRegionContinental('1')
+    this.regiones$ = this.bancoService.getRegionContinental('')
       .pipe(
         // Una forma:
         map(val => val[1].filter((i) => { console.log(i); return i.id !== ''; })),
