@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { BancoService } from '../banco.service';
+import { BancoService } from '@pf/shared/servicios';
 
 @Component({
   selector: 'pf-banco-home',
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.regiones$ = this.bancoService.getRegionContinental('')
+    this.regiones$ = this.bancoService.getRegionContinental('1')
       .pipe(
         // Una forma:
         map(val => val[1].filter((i) => { console.log(i); return i.id !== ''; })),

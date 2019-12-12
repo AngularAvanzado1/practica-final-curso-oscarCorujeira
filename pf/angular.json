@@ -145,6 +145,37 @@
           }
         }
       }
+    },
+    "shared-servicios": {
+      "projectType": "library",
+      "root": "libs/shared/servicios",
+      "sourceRoot": "libs/shared/servicios/src",
+      "prefix": "pf-servicios",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/servicios/tsconfig.lib.json",
+              "libs/shared/servicios/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/servicios/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/servicios/jest.config.js",
+            "tsConfig": "libs/shared/servicios/tsconfig.spec.json",
+            "setupFile": "libs/shared/servicios/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

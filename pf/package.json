@@ -11,6 +11,7 @@
     "build:banco": "ng build banco --prod",
     "test": "ng test",
     "test:banco": "ng test banco --watch --verbose",
+    "test:servicios": "ng test shared-servicios --watch --verbose",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "e2e:banco": "ng e2e banco-e2e --watch",

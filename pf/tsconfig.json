@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pf/shared/dominio": ["libs/shared/dominio/src/index.ts"]
+      "@pf/shared/dominio": ["libs/shared/dominio/src/index.ts"],
+      "@pf/shared/servicios": ["libs/shared/servicios/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
