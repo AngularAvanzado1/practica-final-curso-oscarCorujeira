@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.regiones$ = this.bancoService.getRegionContinental('')
       .pipe(
         // Una forma:
-        map(val => val[1].filter((i) => { console.log(i); return i.id !== ''; })),
+        map(val => val[1].filter(i => i.id !== '')),
         //Otra forma que no funciona, porque el filter se aplica al observable y no al array!!:
         // map(val => val[1]),
         // filter((val, i) => { console.log(val[i]); return val[i].id !== ''; })

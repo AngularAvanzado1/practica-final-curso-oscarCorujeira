@@ -13,7 +13,7 @@ export class HomeUiComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   goRegion(code: string) {
     this.irRegion.emit(code);
