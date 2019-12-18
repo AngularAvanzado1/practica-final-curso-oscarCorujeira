@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeUiComponent } from './home-ui/home-ui.component';
 import { ContinenteComponent } from './continente/continente.component';
 import { ContinenteUiComponent } from './continente-ui/continente-ui.component';
+import { PaisComponent } from './pais/pais.component';
+import { PaisUiComponent } from './pais-ui/pais-ui.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { ContinenteUiComponent } from './continente-ui/continente-ui.component';
     HomeUiComponent,
     ContinenteComponent,
     ContinenteUiComponent,
+    PaisComponent,
+    PaisUiComponent,
   ],
   imports: [
     HttpClientModule,

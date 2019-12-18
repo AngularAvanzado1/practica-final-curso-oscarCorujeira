@@ -3,13 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ContinenteComponent } from './continente/continente.component';
+import { PaisComponent } from './pais/pais.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'home',
-  //   // component: HomeComponent,
-  // }
-  // children: [
   {
     path: 'home',
     component: HomeComponent
@@ -17,9 +13,11 @@ const routes: Routes = [
   {
     path: 'region/:code',
     component: ContinenteComponent
+  },
+  {
+    path: 'country/:id',
+    component: PaisComponent
   }
-  // ],
-  // },
 ];
 
 @NgModule({
