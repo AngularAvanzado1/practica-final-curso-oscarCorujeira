@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.regiones$ = this.bancoService.getRegionContinental('')
       .pipe(
-        // Una forma:
+        // Una forma de filtrar solo los que tengan un id:
         map(val => val[1].filter(i => i.id !== '')),
         //Otra forma que no funciona, porque el filter se aplica al observable y no al array!!:
         // map(val => val[1]),
@@ -33,6 +33,13 @@ export class HomeComponent implements OnInit {
 
   goContinente(code: string) {
     this.router.navigate(['/region', code]);
+  }
+
+  goFiltrar(value: string) {
+    this.regiones$ = this.bancoService.getRegionContinental(value)
+      .pipe(
+        map(val => val[1])
+      );
   }
 
 }

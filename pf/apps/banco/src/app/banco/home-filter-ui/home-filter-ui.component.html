@@ -1,0 +1,8 @@
+<form [formGroup]="filterFormGroup">
+  <input formControlName="region"
+         type="number" />
+  <input value="Filtrar"
+         type="button"
+         [disabled]="filterFormGroup.invalid"
+         (click)="onFiltrar()">
+</form>
