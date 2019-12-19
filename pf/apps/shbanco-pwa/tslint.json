@@ -1,0 +1,7 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "pfBancoPwa", "camelCase"],
+    "component-selector": [true, "element", "pf-banco-pwa", "kebab-case"]
+  }
+}

@@ -1,0 +1,2 @@
+<h3><a [routerLink]="" (click)="goHome()">Volver a Regiones continentales: </a></h3>
+<pf-banco-pwa-pais-ui [pais]="this.pais$ | async" (irContinente)="this.goBackContinente($event)"></pf-banco-pwa-pais-ui>

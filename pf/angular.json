@@ -176,6 +176,129 @@
           "styleext": "scss"
         }
       }
+    },
+    "shbanco-pwa": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/shbanco-pwa",
+      "sourceRoot": "apps/shbanco-pwa/src",
+      "prefix": "pf-banco-pwa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/shbanco-pwa",
+            "index": "apps/shbanco-pwa/src/index.html",
+            "main": "apps/shbanco-pwa/src/main.ts",
+            "polyfills": "apps/shbanco-pwa/src/polyfills.ts",
+            "tsConfig": "apps/shbanco-pwa/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/shbanco-pwa/src/favicon.ico",
+              "apps/shbanco-pwa/src/assets"
+            ],
+            "styles": ["apps/shbanco-pwa/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/shbanco-pwa/src/environments/environment.ts",
+                  "with": "apps/shbanco-pwa/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "shbanco-pwa:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shbanco-pwa:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "shbanco-pwa:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/shbanco-pwa/tsconfig.app.json",
+              "apps/shbanco-pwa/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/shbanco-pwa/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/shbanco-pwa/jest.config.js",
+            "tsConfig": "apps/shbanco-pwa/tsconfig.spec.json",
+            "setupFile": "apps/shbanco-pwa/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "shbanco-pwa-e2e": {
+      "root": "apps/shbanco-pwa-e2e",
+      "sourceRoot": "apps/shbanco-pwa-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/shbanco-pwa-e2e/cypress.json",
+            "tsConfig": "apps/shbanco-pwa-e2e/tsconfig.e2e.json",
+            "devServerTarget": "shbanco-pwa:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shbanco-pwa:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/shbanco-pwa-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/shbanco-pwa-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

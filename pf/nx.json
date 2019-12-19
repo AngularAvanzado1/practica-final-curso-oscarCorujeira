@@ -19,6 +19,12 @@
     },
     "shared-servicios": {
       "tags": []
+    },
+    "shbanco-pwa-e2e": {
+      "tags": []
+    },
+    "shbanco-pwa": {
+      "tags": []
     }
   }
 }

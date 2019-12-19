@@ -1,0 +1,3 @@
+<h3>Regiones: </h3>
+<pf-banco-pwa-home-filter-ui (chosenRegion)="this.goFiltrar($event)"></pf-banco-pwa-home-filter-ui>
+<pf-banco-pwa-home-ui [regiones]="this.regiones$ | async" (irRegion)="this.goContinente($event)"></pf-banco-pwa-home-ui>
