@@ -236,6 +236,42 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "apps/shbanco-pwa/ngsw-config.json"
+            },
+            "production-es": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/shbanco-pwa/src/environments/environment.ts",
+                  "with": "apps/shbanco-pwa/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputPath": "dist/apps/shbanco-pwa/es/",
+              "i18nFile": "apps/shbanco-pwa/src/locale/messages.es.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "es",
+              "baseHref": "es",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/shbanco-pwa/ngsw-config.json"
             }
           }
         },
