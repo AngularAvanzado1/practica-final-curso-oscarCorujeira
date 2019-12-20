@@ -3,7 +3,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { BancoService } from '@pf/shared/servicios';
+//import { BancoService } from '../banco.service';
+ import { BancoService } from '@pf/shared/servicios';
+
 
 @Component({
   selector: 'pf-banco-pwa-home',

@@ -199,7 +199,8 @@
             "aot": false,
             "assets": [
               "apps/shbanco-pwa/src/favicon.ico",
-              "apps/shbanco-pwa/src/assets"
+              "apps/shbanco-pwa/src/assets",
+              "apps/shbanco-pwa/src/manifest.webmanifest"
             ],
             "styles": ["apps/shbanco-pwa/src/styles.scss"],
             "scripts": []
@@ -232,7 +233,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/shbanco-pwa/ngsw-config.json"
             }
           }
         },
