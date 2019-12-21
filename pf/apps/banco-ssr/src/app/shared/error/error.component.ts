@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'pf-banco-error',
+  selector: 'pf-banco-ssr-error',
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

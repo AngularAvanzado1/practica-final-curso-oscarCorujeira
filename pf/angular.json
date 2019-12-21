@@ -348,12 +348,12 @@
       },
       "root": "apps/banco-ssr",
       "sourceRoot": "apps/banco-ssr/src",
-      "prefix": "pf-banco",
+      "prefix": "pf-banco-ssr",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/banco-ssr",
+            "outputPath": "dist/browser",
             "index": "apps/banco-ssr/src/index.html",
             "main": "apps/banco-ssr/src/main.ts",
             "polyfills": "apps/banco-ssr/src/polyfills.ts",
@@ -363,7 +363,9 @@
               "apps/banco-ssr/src/favicon.ico",
               "apps/banco-ssr/src/assets"
             ],
-            "styles": ["apps/banco-ssr/src/styles.scss"],
+            "styles": [
+              "apps/banco-ssr/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -431,6 +433,29 @@
             "jestConfig": "apps/banco-ssr/jest.config.js",
             "tsConfig": "apps/banco-ssr/tsconfig.spec.json",
             "setupFile": "apps/banco-ssr/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "apps/banco-ssr/src/main.server.ts",
+            "tsConfig": "apps/banco-ssr/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/banco-ssr/src/environments/environment.ts",
+                  "with": "apps/banco-ssr/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
           }
         }
       }

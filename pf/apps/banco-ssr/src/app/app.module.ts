@@ -13,7 +13,7 @@ import { ErrorComponent } from './shared/error/error.component';
     ErrorComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BancoModule,
     // RouterModule.forRoot([], { initialNavigation: 'enabled' })
     AppRoutingModule,

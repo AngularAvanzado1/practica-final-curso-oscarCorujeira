@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'pf-banco-pais-ui',
+  selector: 'pf-banco-ssr-pais-ui',
   templateUrl: './pais-ui.component.html',
   styleUrls: ['./pais-ui.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

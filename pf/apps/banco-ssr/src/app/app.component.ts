@@ -3,7 +3,7 @@ import { Test } from '@pf/shared/dominio';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'pf-banco-root',
+  selector: 'pf-banco-ssr-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

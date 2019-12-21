@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Input, Output
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'pf-banco-home-filter-ui',
+  selector: 'pf-banco-ssr-home-filter-ui',
   templateUrl: './home-filter-ui.component.html',
   styleUrls: ['./home-filter-ui.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

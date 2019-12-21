@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BancoService } from '@pf/shared/servicios';
 
 @Component({
-  selector: 'pf-banco-pais',
+  selector: 'pf-banco-ssr-pais',
   templateUrl: './pais.component.html',
   styleUrls: ['./pais.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
