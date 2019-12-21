@@ -7,6 +7,7 @@
     "nx": "nx",
     "start": "ng serve",
     "start:banco": "ng serve banco --port=4201 -o",
+    "start:banco:ssr": "ng serve banco-ssr --port=4201 -o",
     "start:shbanco": "ng serve shbanco-pwa --port=4201 -o",
     "start:shbanco:pwa": "angular-http-server --open -p 8080 --path ./dist/apps/shbanco-pwa",
     "build": "ng build",

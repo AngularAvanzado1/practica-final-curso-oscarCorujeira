@@ -1,0 +1,9 @@
+<div *ngIf="paises">
+  <h1>{{ paises[0].region.value }}</h1>
+  <ul>
+    <li *ngFor="let pais of paises; let i = index">
+      Id: {{ pais.id }} - Code: {{ pais.code }} - Nombre: {{ pais.name }}
+      <button (click)="this.goPais(pais.id)">Ir a país</button>
+    </li>
+  </ul>
+</div>

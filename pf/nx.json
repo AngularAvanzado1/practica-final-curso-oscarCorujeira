@@ -25,6 +25,12 @@
     },
     "shbanco-pwa": {
       "tags": []
+    },
+    "banco-ssr-e2e": {
+      "tags": []
+    },
+    "banco-ssr": {
+      "tags": []
     }
   }
 }
