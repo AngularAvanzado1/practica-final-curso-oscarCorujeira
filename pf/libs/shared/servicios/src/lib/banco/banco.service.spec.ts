@@ -18,7 +18,7 @@ describe('BancoService', () => {
     expect(regionContinental$).toBeInstanceOf(Observable);
   });
 
-  it(`THEN: should return 'Welcome to api!' when call 'getRegionContinental()'`, async(() => {
+  it(`THEN: should return data when call 'getRegionContinental()'`, async(() => {
     const service: BancoService = TestBed.get(BancoService);
     service
       .getRegionContinental('1')

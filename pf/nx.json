@@ -31,6 +31,9 @@
     },
     "banco-ssr": {
       "tags": []
+    },
+    "shared-webcomp": {
+      "tags": []
     }
   }
 }

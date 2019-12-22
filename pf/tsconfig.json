@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@pf/shared/dominio": ["libs/shared/dominio/src/index.ts"],
-      "@pf/shared/servicios": ["libs/shared/servicios/src/index.ts"]
+      "@pf/shared/servicios": ["libs/shared/servicios/src/index.ts"],
+      "@pf/shared/webcomp": ["libs/shared/webcomp/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

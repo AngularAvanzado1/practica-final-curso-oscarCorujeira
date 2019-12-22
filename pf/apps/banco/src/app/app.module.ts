@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BancoModule } from './banco/banco.module';
 import { ErrorComponent } from './shared/error/error.component';
+// import { WebcompModule } from '@pf/shared/webcomp';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ErrorComponent } from './shared/error/error.component';
     BrowserModule,
     BancoModule,
     // RouterModule.forRoot([], { initialNavigation: 'enabled' })
+    // WebcompModule,
     AppRoutingModule,
   ],
   providers: [],

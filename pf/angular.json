@@ -363,9 +363,7 @@
               "apps/banco-ssr/src/favicon.ico",
               "apps/banco-ssr/src/assets"
             ],
-            "styles": [
-              "apps/banco-ssr/src/styles.scss"
-            ],
+            "styles": ["apps/banco-ssr/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -484,6 +482,37 @@
             "tsConfig": ["apps/banco-ssr-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/banco-ssr-e2e/**"]
           }
+        }
+      }
+    },
+    "shared-webcomp": {
+      "projectType": "library",
+      "root": "libs/shared/webcomp",
+      "sourceRoot": "libs/shared/webcomp/src",
+      "prefix": "webcomp",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/webcomp/tsconfig.lib.json",
+              "libs/shared/webcomp/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/webcomp/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/webcomp/jest.config.js",
+            "tsConfig": "libs/shared/webcomp/tsconfig.spec.json",
+            "setupFile": "libs/shared/webcomp/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }
