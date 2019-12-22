@@ -1,11 +1,11 @@
 <div *ngIf="pais">
-  <h1>{{ pais.region.value }}</h1>
+  <h1 *ngIf="pais.region">{{ pais.region.value }}</h1>
   <ul>
     <li>Id: {{ pais.id }} - Nombre: {{ pais.name }}</li>
     <li>Capital: {{ pais.capitalCity }}</li>
     <li>Latitud: {{pais.latitude}} - Longitud: {{pais.longitude}}</li>
-    <li>Income level: {{ pais.incomeLevel.value }}</li>
-    <li>Lending type: {{ pais.lendingType.value }}</li>
+    <li *ngIf="pais.incomeLevel">Income level: {{ pais.incomeLevel.value }}</li>
+    <li *ngIf="pais.lendingType">Lending type: {{ pais.lendingType.value }}</li>
     <button (click)="this.goContinente(pais.region.id)">Volver al continente</button>
   </ul>
 </div>
