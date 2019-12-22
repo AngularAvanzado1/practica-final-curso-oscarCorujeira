@@ -21,9 +21,18 @@
             "polyfills": "apps/banco/src/polyfills.ts",
             "tsConfig": "apps/banco/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/banco/src/favicon.ico", "apps/banco/src/assets"],
-            "styles": ["apps/banco/src/styles.scss"],
-            "scripts": []
+            "assets": [
+              "apps/banco/src/favicon.ico",
+              "apps/banco/src/assets"
+            ],
+            "styles": [
+              "apps/banco/src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -81,7 +90,10 @@
               "apps/banco/tsconfig.app.json",
               "apps/banco/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/banco/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/banco/**"
+            ]
           }
         },
         "test": {
@@ -115,8 +127,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/banco-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/banco-e2e/**"]
+            "tsConfig": [
+              "apps/banco-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/banco-e2e/**"
+            ]
           }
         }
       }
@@ -134,7 +151,10 @@
               "libs/shared/dominio/tsconfig.lib.json",
               "libs/shared/dominio/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/dominio/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/dominio/**"
+            ]
           }
         },
         "test": {
@@ -159,7 +179,10 @@
               "libs/shared/servicios/tsconfig.lib.json",
               "libs/shared/servicios/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/servicios/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/servicios/**"
+            ]
           }
         },
         "test": {
@@ -202,7 +225,9 @@
               "apps/shbanco-pwa/src/assets",
               "apps/shbanco-pwa/src/manifest.webmanifest"
             ],
-            "styles": ["apps/shbanco-pwa/src/styles.scss"],
+            "styles": [
+              "apps/shbanco-pwa/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -299,7 +324,10 @@
               "apps/shbanco-pwa/tsconfig.app.json",
               "apps/shbanco-pwa/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/shbanco-pwa/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/shbanco-pwa/**"
+            ]
           }
         },
         "test": {
@@ -333,8 +361,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/shbanco-pwa-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/shbanco-pwa-e2e/**"]
+            "tsConfig": [
+              "apps/shbanco-pwa-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/shbanco-pwa-e2e/**"
+            ]
           }
         }
       }
@@ -363,7 +396,9 @@
               "apps/banco-ssr/src/favicon.ico",
               "apps/banco-ssr/src/assets"
             ],
-            "styles": ["apps/banco-ssr/src/styles.scss"],
+            "styles": [
+              "apps/banco-ssr/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -422,7 +457,10 @@
               "apps/banco-ssr/tsconfig.app.json",
               "apps/banco-ssr/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/banco-ssr/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/banco-ssr/**"
+            ]
           }
         },
         "test": {
@@ -479,8 +517,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/banco-ssr-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/banco-ssr-e2e/**"]
+            "tsConfig": [
+              "apps/banco-ssr-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/banco-ssr-e2e/**"
+            ]
           }
         }
       }
@@ -498,7 +541,10 @@
               "libs/shared/webcomp/tsconfig.lib.json",
               "libs/shared/webcomp/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/webcomp/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/webcomp/**"
+            ]
           }
         },
         "test": {
@@ -528,7 +574,7 @@
       "prefix": "pf",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/apps/external-country",
             "index": "apps/external-country/src/index.html",
@@ -540,8 +586,19 @@
               "apps/external-country/src/favicon.ico",
               "apps/external-country/src/assets"
             ],
-            "styles": ["apps/external-country/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/external-country/src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "bundleName": "polyfill-webcomp-es5",
+                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+              },
+              {
+                "bundleName": "polyfill-webcomp",
+                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -552,7 +609,7 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -560,23 +617,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "external-country:build"
           },
@@ -599,11 +644,14 @@
               "apps/external-country/tsconfig.app.json",
               "apps/external-country/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/external-country/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/external-country/**"
+            ]
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "jestConfig": "apps/external-country/jest.config.js",
             "tsConfig": "apps/external-country/tsconfig.spec.json",
@@ -633,8 +681,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/external-country-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/external-country-e2e/**"]
+            "tsConfig": [
+              "apps/external-country-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/external-country-e2e/**"
+            ]
           }
         }
       }
