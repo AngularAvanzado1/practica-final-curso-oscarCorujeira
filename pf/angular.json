@@ -515,6 +515,129 @@
           "styleext": "scss"
         }
       }
+    },
+    "external-country": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/external-country",
+      "sourceRoot": "apps/external-country/src",
+      "prefix": "pf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/external-country",
+            "index": "apps/external-country/src/index.html",
+            "main": "apps/external-country/src/main.ts",
+            "polyfills": "apps/external-country/src/polyfills.ts",
+            "tsConfig": "apps/external-country/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/external-country/src/favicon.ico",
+              "apps/external-country/src/assets"
+            ],
+            "styles": ["apps/external-country/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/external-country/src/environments/environment.ts",
+                  "with": "apps/external-country/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "external-country:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "external-country:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "external-country:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/external-country/tsconfig.app.json",
+              "apps/external-country/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/external-country/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/external-country/jest.config.js",
+            "tsConfig": "apps/external-country/tsconfig.spec.json",
+            "setupFile": "apps/external-country/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "external-country-e2e": {
+      "root": "apps/external-country-e2e",
+      "sourceRoot": "apps/external-country-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/external-country-e2e/cypress.json",
+            "tsConfig": "apps/external-country-e2e/tsconfig.e2e.json",
+            "devServerTarget": "external-country:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "external-country:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/external-country-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/external-country-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -34,6 +34,12 @@
     },
     "shared-webcomp": {
       "tags": []
+    },
+    "external-country-e2e": {
+      "tags": []
+    },
+    "external-country": {
+      "tags": []
     }
   }
 }
